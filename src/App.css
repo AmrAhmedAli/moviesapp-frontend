@@ -136,7 +136,7 @@ nav a:hover {
 }
 @media (max-width: 550px) {
   .media {
-    width: 12rem;
+    width: 11rem;
     height: 17rem;
   }
 }
@@ -496,4 +496,52 @@ nav a:hover {
 }
 .middle-row {
   align-items: center !important;
+}
+.mobile-view {
+  width: 100%;
+}
+@media (max-width: 550px) {
+  .desktop-view {
+    display: none;
+  }
+  .mobile-view {
+    display: flex;
+  }
+}
+@media (min-width: 550px) {
+  .desktop-view {
+    display: flex;
+  }
+  .mobile-view {
+    display: none;
+  }
+}
+
+.burger-menu {
+  height: max-content;
+  align-self: center;
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+  color: rgb(175, 175, 175) !important;
+  background-color: rgb(70, 70, 70) !important;
+  border: 2px solid rgb(175, 175, 175) !important;
+}
+.burger-menu:hover {
+  color: white !important;
+  border: 2px solid white !important;
+}
+.mobile-drop-down {
+  background-color: transparent !important;
+  border: 0 !important;
+  text-transform: uppercase !important;
+  font-size: small !important;
+  font-weight: 700 !important;
+}
+.mobile-drop-down::after {
+  display: none !important;
+}
+.mobile-drop-down:focus {
+  outline: none !important;
+  box-shadow: none !important;
 }
