@@ -1,24 +1,109 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
+import React, { useState } from "react";
+import "./App.css";
+import { Switch, Route, Redirect, NavLink } from "react-router-dom";
+import MoviesList from "./containers/MoviesList";
+import MyMoviesList from "./containers/MyMovies";
+import Login from "./containers/Login";
+import { AppBar, IconButton, Toolbar } from "@material-ui/core";
+import { useDispatch, useSelector } from "react-redux";
+import { AuthCheckState, AuthLogout } from "./actions/AuthActions";
+import { Dropdown } from "react-bootstrap";
+import Signup from "./containers/Signup";
+import { Add } from "@material-ui/icons";
 function App() {
+  const [className, setClassName] = useState("AppBar");
+  const dispatch = useDispatch();
+  React.useEffect(() => {
+    FetchData();
+  }, []);
+  const FetchData = () => {
+    dispatch(AuthCheckState());
+  };
+  const handleScroll = () => {
+    if (window.pageYOffset > 20) {
+      setClassName("AppBar-dark");
+    } else {
+      setClassName("AppBar");
+    }
+  };
+  const handleSignout = () => {
+    dispatch(AuthLogout());
+  };
+  window.addEventListener("scroll", handleScroll);
+  const executeScroll = () => {
+    window.location.replace("/#add-new-movie");
+  };
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <AppBar position="fixed" className={className}>
+        <Toolbar className="toolbar-container">
+          <div className="left-toolbar-container">
+            <img className="logo" src={process.env.PUBLIC_URL + "/logo.png"} />
+            <nav className="intial-nav">
+              <NavLink to={"/"}>Home</NavLink>
+
+              {localStorage.getItem("token") && (
+                <NavLink to={"/my-movies"}>My Movies</NavLink>
+              )}
+            </nav>
+          </div>
+          <div className="right-toolbar-container">
+            <nav>
+              {localStorage.getItem("token") && (
+                <div className="right-flex">
+                  <IconButton
+                    aria-label=""
+                    size="small"
+                    className="add-movie"
+                    onClick={executeScroll}
+                  >
+                    <Add fontSize="inherit" />
+                    <span className="addnew-tooltiptext">Add movie</span>
+                  </IconButton>
+                  <Dropdown>
+                    <Dropdown.Toggle className="drop-down" id="dropdown-basic">
+                      Welcome, {localStorage.getItem("username")}
+                    </Dropdown.Toggle>
+
+                    <Dropdown.Menu>
+                      <Dropdown.Item className="dropdown-item">
+                        Account
+                      </Dropdown.Item>
+                      <Dropdown.Item className="dropdown-item">
+                        Help
+                      </Dropdown.Item>
+                      <Dropdown.Item
+                        className="dropdown-item"
+                        onClick={handleSignout}
+                      >
+                        Signout
+                      </Dropdown.Item>
+                    </Dropdown.Menu>
+                  </Dropdown>
+                </div>
+              )}
+              {!localStorage.getItem("token") && (
+                <NavLink to={"/login"}>Login</NavLink>
+              )}
+            </nav>
+          </div>
+        </Toolbar>
+      </AppBar>
+      <Switch>
+        <Route path={"/"} exact component={MoviesList} />
+        {localStorage.getItem("token") && (
+          <Route path={"/my-movies"} exact component={MyMoviesList} />
+        )}
+
+        {!localStorage.getItem("token") && (
+          <Route path={"/login"} exact component={Login} />
+        )}
+        {!localStorage.getItem("token") && (
+          <Route path={"/signup"} exact component={Signup} />
+        )}
+
+        <Redirect to={"/"} />
+      </Switch>
     </div>
   );
 }
