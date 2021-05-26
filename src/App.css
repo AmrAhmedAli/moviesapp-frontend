@@ -132,6 +132,7 @@ nav a:hover {
   color: rgb(175, 175, 175);
   cursor: pointer;
   transition: transform 0.5s; /* Animation */
+  height: 22rem;
 }
 @media (max-width: 550px) {
   .media {
