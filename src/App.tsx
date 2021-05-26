@@ -10,9 +10,9 @@ import MyMoviesList from "./containers/MyMoviesContainer/MyMovies";
 import Login from "./containers/LoginContainer/Login";
 import Signup from "./containers/SignupContainer/Signup";
 import { AuthCheckState } from "./actions/AuthActions";
+import ToolbarCont from "./containers/ToolbarContainer/ToolbarCont";
 /** Stylesheet Import */
 import "./App.css";
-import ToolbarCont from "./containers/ToolbarContainer/ToolbarCont";
 
 /** Functional App */
 function App() {
