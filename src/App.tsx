@@ -98,9 +98,7 @@ function App() {
         {!localStorage.getItem("token") && (
           <Route path={"/login"} exact component={Login} />
         )}
-        {!localStorage.getItem("token") && (
-          <Route path={"/signup"} exact component={Signup} />
-        )}
+        <Route path={"/signup"} exact component={Signup} />
 
         <Redirect to={"/"} />
       </Switch>
