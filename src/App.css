@@ -136,8 +136,8 @@ nav a:hover {
 }
 @media (max-width: 550px) {
   .media {
-    width: 11rem;
-    height: 17rem;
+    width: 9rem;
+    height: 15rem;
   }
 }
 @media (max-width: 440px) {
