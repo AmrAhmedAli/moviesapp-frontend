@@ -12,7 +12,7 @@ export const GetMoviesList =
       dispatch({
         type: MOVIES_LOADING,
       });
-      const res = await axios.get("http://moviesbackendapp.herokuapp.com");
+      const res = await axios.get("https://moviesbackendapp.herokuapp.com");
 
       dispatch({
         type: MOVIES_SUCCESS,
@@ -39,7 +39,7 @@ export const GetMyMoviesList =
       }
       axios.defaults.headers.common["Authorization"] = "Token " + token;
       const res = await axios.get(
-        "http://moviesbackendapp.herokuapp.com/movies/"
+        "https://moviesbackendapp.herokuapp.com/movies/"
       );
 
       dispatch({

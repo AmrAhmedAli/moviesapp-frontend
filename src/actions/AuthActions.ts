@@ -20,7 +20,7 @@ export const AuthLogin =
         password: password,
       };
       const res = await axios.post(
-        "http://moviesbackendapp.herokuapp.com/rest-auth/login/",
+        "https://moviesbackendapp.herokuapp.com/rest-auth/login/",
         body
       );
       const token = res.data.key;
@@ -64,7 +64,7 @@ export const AuthSignUp =
         password2: password2,
       };
       const res = await axios.post(
-        "http://moviesbackendapp.herokuapp.com/rest-auth/registration/",
+        "https://moviesbackendapp.herokuapp.com/rest-auth/registration/",
         body
       );
       const token = res.data.key;

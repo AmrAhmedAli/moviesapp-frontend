@@ -46,7 +46,7 @@ export const PostMovieAction =
       if (youtube_url) form_data.append("youtube_url", youtube_url);
       axios.defaults.headers.common["Authorization"] = "Token " + token;
       const res = await axios.post(
-        "http://moviesbackendapp.herokuapp.com/movies/",
+        "https://moviesbackendapp.herokuapp.com/movies/",
         form_data
       );
 
