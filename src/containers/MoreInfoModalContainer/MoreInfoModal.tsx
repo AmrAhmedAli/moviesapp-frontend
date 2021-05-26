@@ -3,6 +3,8 @@ import { Button, Modal } from "react-bootstrap";
 import ReactPlayer from "react-player";
 import { Movie } from "../../actions/moviesListActionTypes";
 
+import "./MoreInfoModal.css";
+
 type PropsI = {
   show: boolean;
   onHide: () => void;

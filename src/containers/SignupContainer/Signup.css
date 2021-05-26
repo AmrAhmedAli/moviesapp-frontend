@@ -1,0 +1,68 @@
+.login-container {
+  position: fixed;
+  width: 100%;
+}
+.login-card {
+  padding: 2rem;
+  width: 27rem;
+  margin: 10% auto;
+  background-color: rgba(22, 22, 22, 0.856) !important;
+  color: white !important;
+  border-radius: 0.5rem !important;
+}
+.login-card-title {
+  font-size: xx-large !important;
+  font-weight: bold !important;
+  margin-bottom: 2rem !important;
+}
+.Inp-group {
+  margin-bottom: 2rem !important;
+}
+.login-textField {
+  font-weight: 500;
+  color: white !important;
+  background-color: rgba(87, 87, 87, 0.644);
+  border-radius: 2px;
+}
+.login-input {
+  color: rgb(201, 201, 201) !important;
+}
+.login-Btn {
+  width: 100%;
+  background-color: #d91921 !important;
+  border: #d91921 !important;
+  height: 3rem;
+  margin-bottom: 0.3rem !important;
+  font-weight: bold !important;
+}
+
+.login-Btn:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+.login-help {
+  text-align: right;
+  margin-bottom: 0.3rem !important;
+  cursor: pointer;
+  font-size: small;
+}
+.login-help:hover {
+  text-decoration: underline;
+}
+.err-login {
+  background-color: white;
+  border-radius: 2px;
+  padding: 0.2rem;
+  margin-bottom: 1rem !important;
+  display: block;
+}
+@media (max-width: 440px) {
+  .login-card {
+    width: 23rem !important;
+  }
+}
+@media (max-width: 370px) {
+  .login-card {
+    width: 19rem !important;
+  }
+}

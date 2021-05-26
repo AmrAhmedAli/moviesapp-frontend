@@ -7,6 +7,7 @@ import MovieCard from "../MovieCardContainer/MovieCard";
 import { HomeVideoContainer } from "../HomeVideoContainer/HomeVideo";
 import PostMovie from "../PostMovieContainer/PostMovie";
 
+import "./MoviesList.css";
 const MoviesList = () => {
   const dispatch = useDispatch();
   const movieState = useSelector((state: RootStore) => state.moviesList);

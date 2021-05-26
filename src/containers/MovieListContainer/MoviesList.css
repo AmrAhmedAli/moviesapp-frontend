@@ -1,0 +1,12 @@
+.movies-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 2rem;
+  justify-content: center;
+}
+@media (max-width: 550px) {
+  .movies-container {
+    margin: 1rem 0.4rem 1rem 0.4rem !important;
+  }
+}

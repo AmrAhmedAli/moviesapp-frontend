@@ -4,7 +4,7 @@ import { GetMyMoviesList } from "../../actions/moviesListActions";
 import { RootStore } from "../../Store";
 import _ from "lodash";
 import MovieCard from "../MovieCardContainer/MovieCard";
-
+import "./MyMovies.css";
 const MyMoviesList = () => {
   const dispatch = useDispatch();
   const movieState = useSelector((state: RootStore) => state.moviesList);

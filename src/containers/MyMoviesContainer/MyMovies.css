@@ -1,0 +1,25 @@
+.movies-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 2rem;
+  justify-content: center;
+}
+@media (max-width: 550px) {
+  .movies-container {
+    margin: 1rem 0.4rem 1rem 0.4rem !important;
+  }
+}
+.my-movies-page {
+  margin: 5rem 2% 5rem 2%;
+}
+.my-movies-title {
+  color: white;
+  font-size: 30px;
+  font-weight: 500;
+}
+.my-movies-sub {
+  color: white;
+  font-size: 30px;
+  font-weight: 500;
+}

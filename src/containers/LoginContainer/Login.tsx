@@ -4,6 +4,7 @@ import { Button, Card, Spinner } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { AuthLogin } from "../../actions/AuthActions";
 import { RootStore } from "../../Store";
+import "./Login.css";
 
 const Login = () => {
   const dispatch = useDispatch();

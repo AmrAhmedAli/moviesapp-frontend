@@ -1,0 +1,65 @@
+.react-player {
+  top: 0;
+  left: 0;
+  height: unset !important;
+}
+@media screen and (min-width: 320px) {
+  .actions-video {
+    top: 7rem;
+  }
+}
+@media screen and (min-width: 550px) {
+  .actions-video {
+    top: 10rem;
+  }
+}
+@media screen and (min-width: 769px) {
+  .actions-video {
+    top: 15rem;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .actions-video {
+    top: 20rem;
+  }
+}
+@media screen and (min-width: 1201px) {
+  .actions-video {
+    top: 25rem;
+  }
+}
+.actions-video {
+  position: absolute !important;
+  left: 5%;
+  z-index: 10;
+}
+.actions-Btn {
+  background-color: white !important;
+  padding: 0.5rem 1rem 0.5rem 1rem !important;
+}
+.mute-Btn {
+  background-color: white !important;
+  width: fit-content !important;
+  margin-left: 0.5rem !important;
+  border-radius: 4px !important;
+  padding: 0.5rem 1rem 0.5rem 1rem !important;
+}
+.playIcon {
+  font-size: x-large !important  ;
+  color: black !important;
+}
+@media (max-width: 550px) {
+  .mute-Btn {
+    margin-left: 0.5rem !important;
+    border-radius: 2px !important;
+    padding: 0.25rem 0.5rem 0.25rem 0.5rem !important;
+  }
+  .playIcon {
+    font-size: medium !important  ;
+  }
+  .actions-Btn {
+    padding: 0.25rem 0.5rem 0.25rem 0.5rem !important;
+    border-radius: 2px !important;
+    font-size: x-small !important;
+  }
+}

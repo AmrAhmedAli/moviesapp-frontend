@@ -1,9 +1,9 @@
 import React from "react";
-import { Button, Col, Form, Spinner } from "react-bootstrap";
+import { Button, Form, Spinner } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { RootStore } from "../../Store";
 import { PostMovieAction } from "../../actions/PostMovieAction";
-
+import "./PostMovie.css";
 const PostMovie = () => {
   const dispatch = useDispatch();
   const postMovieState = useSelector((state: RootStore) => state.postMovie);

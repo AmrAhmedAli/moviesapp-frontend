@@ -4,6 +4,7 @@ import ReactPlayer from "react-player";
 import PlayIcon from "@material-ui/icons/PlayArrow";
 import MuteIcon from "@material-ui/icons/VolumeUp";
 import UnMuteIcon from "@material-ui/icons/VolumeOff";
+import "./HomeVideo.css";
 export const HomeVideoContainer = () => {
   const [muted, setMuted] = useState(true);
   const handleToggleMute = () => setMuted((current) => !current);

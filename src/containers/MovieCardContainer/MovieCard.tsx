@@ -4,6 +4,8 @@ import { Movie } from "../../actions/moviesListActionTypes";
 
 import ArrowDown from "@material-ui/icons/ChevronRight";
 import MoreInfoModal from "../MoreInfoModalContainer/MoreInfoModal";
+
+import "./MovieCard.css";
 type MovieProps = {
   movieProps: Movie;
 };
