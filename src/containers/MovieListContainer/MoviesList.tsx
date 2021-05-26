@@ -1,23 +1,20 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { GetMyMoviesList } from "../actions/moviesListActions";
-import { RootStore } from "../Store";
+import { GetMoviesList } from "../../actions/moviesListActions";
+import { RootStore } from "../../Store";
 import _ from "lodash";
-import MovieCard from "./MovieCard";
+import MovieCard from "../MovieCardContainer/MovieCard";
+import { HomeVideoContainer } from "../HomeVideoContainer/HomeVideo";
+import PostMovie from "../PostMovieContainer/PostMovie";
 
-const MyMoviesList = () => {
+const MoviesList = () => {
   const dispatch = useDispatch();
   const movieState = useSelector((state: RootStore) => state.moviesList);
   React.useEffect(() => {
     FetchData();
   }, []);
   const FetchData = () => {
-    const token = localStorage.getItem("token");
-    if (token) {
-      dispatch(GetMyMoviesList(token));
-    } else {
-      window.location.replace("/");
-    }
+    dispatch(GetMoviesList());
   };
   const getListMovies = () => {
     if (!_.isEmpty(movieState.movies)) {
@@ -31,16 +28,15 @@ const MyMoviesList = () => {
     if (!_.isEmpty(movieState.errMsg)) {
       return <p className="my-movies-sub">{movieState.errMsg}</p>;
     }
-    return <p className="my-movies-sub">No Data to Show!</p>;
+    return <p className="my-movies-sub">Unable to get data</p>;
   };
   return (
-    <div className="my-movies-page">
-      <div>
-        <p className="my-movies-title">My List</p>
-      </div>
+    <div>
+      <HomeVideoContainer />{" "}
       <div className="movies-container">{getListMovies()}</div>
+      {localStorage.getItem("token") && <PostMovie />}
     </div>
   );
 };
 
-export default MyMoviesList;
+export default MoviesList;

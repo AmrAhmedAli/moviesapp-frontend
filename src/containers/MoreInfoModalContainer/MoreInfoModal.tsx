@@ -1,9 +1,8 @@
 import React from "react";
 import { Button, Modal } from "react-bootstrap";
 import ReactPlayer from "react-player";
-import { Movie } from "../actions/moviesListActionTypes";
+import { Movie } from "../../actions/moviesListActionTypes";
 
-const PATH = "https://moviesbackendapp.herokuapp.com";
 type PropsI = {
   show: boolean;
   onHide: () => void;

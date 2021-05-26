@@ -1,25 +1,36 @@
+/** Main Imports */
 import React, { useState } from "react";
-import "./App.css";
+import { useDispatch } from "react-redux";
 import { Switch, Route, Redirect, NavLink } from "react-router-dom";
-import MoviesList from "./containers/MoviesList";
-import MyMoviesList from "./containers/MyMovies";
-import Login from "./containers/Login";
+/** Design Imports */
 import { AppBar, IconButton, Toolbar } from "@material-ui/core";
-import { useDispatch, useSelector } from "react-redux";
-import { AuthCheckState, AuthLogout } from "./actions/AuthActions";
 import { Dropdown } from "react-bootstrap";
-import Signup from "./containers/Signup";
+/** App components and actions Imports */
+import MoviesList from "./containers/MovieListContainer/MoviesList";
+import MyMoviesList from "./containers/MyMoviesContainer/MyMovies";
+import Login from "./containers/LoginContainer/Login";
+import Signup from "./containers/SignupContainer/Signup";
+import { AuthCheckState, AuthLogout } from "./actions/AuthActions";
+/** Icons Imports */
 import { Add } from "@material-ui/icons";
 import { Menu } from "@material-ui/icons";
+/** Stylesheet Import */
+import "./App.css";
+
+/** Functional App */
 function App() {
   const [className, setClassName] = useState("AppBar");
   const dispatch = useDispatch();
+
+  /** On page load fetch data to see active user logged in */
   React.useEffect(() => {
     FetchData();
   }, []);
   const FetchData = () => {
-    dispatch(AuthCheckState());
+    dispatch(AuthCheckState()); //calls action AuthCheckState
   };
+
+  /** Turns the header to dark if scroll */
   const handleScroll = () => {
     if (window.pageYOffset > 20) {
       setClassName("AppBar-dark");
@@ -27,13 +38,19 @@ function App() {
       setClassName("AppBar");
     }
   };
+  /** Scroll listener  */
+  window.addEventListener("scroll", handleScroll);
+
+  /** Calls the action AuthSignout  */
   const handleSignout = () => {
     dispatch(AuthLogout());
   };
-  window.addEventListener("scroll", handleScroll);
+
+  /** Goes to post movie section if "add movie" button is clicked  */
   const executeScroll = () => {
     window.location.replace("/#add-new-movie");
   };
+
   return (
     <div className="App">
       <AppBar position="fixed" className={className}>
@@ -42,6 +59,7 @@ function App() {
             <div className="left-toolbar-container">
               <img
                 className="logo"
+                alt=""
                 src={process.env.PUBLIC_URL + "/logo.png"}
               />
               <nav className="intial-nav">
@@ -100,6 +118,7 @@ function App() {
             <div className="left-toolbar-container">
               <img
                 className="logo"
+                alt=""
                 src={process.env.PUBLIC_URL + "/logo.png"}
               />
             </div>

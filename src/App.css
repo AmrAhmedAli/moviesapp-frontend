@@ -144,8 +144,13 @@ nav a:hover {
   }
 }
 @media (max-width: 440px) {
-  login-card {
-    width: 23rem;
+  .login-card {
+    width: 23rem !important;
+  }
+}
+@media (max-width: 370px) {
+  .login-card {
+    width: 19rem !important;
   }
 }
 .media:hover {

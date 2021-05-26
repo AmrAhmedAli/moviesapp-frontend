@@ -1,9 +1,9 @@
 import { TextField } from "@material-ui/core";
-import React, { ChangeEvent, useState } from "react";
+import React, { useState } from "react";
 import { Button, Card, Spinner } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-import { AuthLogin } from "../actions/AuthActions";
-import { RootStore } from "../Store";
+import { AuthLogin } from "../../actions/AuthActions";
+import { RootStore } from "../../Store";
 
 const Login = () => {
   const dispatch = useDispatch();
